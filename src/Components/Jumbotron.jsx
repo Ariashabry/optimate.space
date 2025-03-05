@@ -7,7 +7,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 
 const Jumbotron = () => {
     return (
-        <section className="bg-white dark:bg-gray-900 mt-16 h-screen">
+        <section className="bg-white dark:bg-gray-900 mt-16 h-svh" id='home'>
             <div className="container py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 h-full flex items-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                     <div className="p-4 text-left h-full flex flex-col justify-center">
@@ -54,8 +54,8 @@ const Jumbotron = () => {
                         </div>
                     </div>
                     <div className="flex items-center justify-center">
-                        <div class="avatar">
-                            <div class="img">
+                        <div className="avatar">
+                            <div className="img">
                                 <img src="https://marketifythemes.net/html/orido/img/hero/1.jpg" alt="" />
                             </div>
                         </div>
