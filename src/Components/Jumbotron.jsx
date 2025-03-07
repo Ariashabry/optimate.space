@@ -4,6 +4,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
+import bg_hero from '../assets/bg-hero (1).png';
 
 const Jumbotron = () => {
     return (
@@ -33,30 +34,30 @@ const Jumbotron = () => {
                             <p className="text-2xl text-black dark:text-white">I'm creative designer based in New York, and I'm very passionate and dedicated to my work.</p>
                         </div>
                         <div className="mt-20">
-                            <button type="button" className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-10 py-5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+                            <a type="button" href="#contact" className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-10 py-5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
                                 <FontAwesomeIcon icon={faPhone} className="mr-2" /> Contact Me
-                            </button>
-                            <button type="button" className="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-10 py-5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800 rounded-full ms-4">
+                            </a>
+                            <a type="button" href='#portfolio' className="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-10 py-5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800 rounded-full ms-4">
                                 <FontAwesomeIcon icon={faLocationArrow} className="mr-2 text-xl" /> My portfolio
-                            </button>
+                            </a>
                         </div>
                         <div className='button-sosmed mt-48'>
                             <h3 className='inline-block me-8 text-2xl font-semibold text-black dark:text-purple-500'>Follow Me: </h3>
-                            <button type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-4  py-3 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 inline-block">
+                            <a href="https://instagram.com/ariashabry" target="_blank" type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-4  py-3 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 inline-block">
                                 <FontAwesomeIcon icon={faInstagram} className='text-2xl' />
-                            </button>
-                            <button type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-4 py-3 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 inline-block">
+                            </a>
+                            <a href="https://github.com/ariashabry" target="_blank" type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-4 py-3 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 inline-block">
                                 <FontAwesomeIcon icon={faGithub} className='text-2xl' />
-                            </button>
-                            <button type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-4 py-3 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 inline-block">
+                            </a>
+                            <a href="https://www.linkedin.com/in/ariashabry/" target="_blank" type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-4 py-3 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 inline-block">
                                 <FontAwesomeIcon icon={faLinkedin} className='text-2xl' />
-                            </button>
+                            </a>
                         </div>
                     </div>
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center justify-center sm:hidden md:flex">
                         <div className="avatar">
                             <div className="img">
-                                <img src="https://marketifythemes.net/html/orido/img/hero/1.jpg" alt="" />
+                                <img src={bg_hero} alt="" />
                             </div>
                         </div>
                     </div>

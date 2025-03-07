@@ -2,6 +2,7 @@ import { faAws, faDocker, faGithub, faGolang, faLaravel, faMicrosoft, faNodeJs, 
 import { faArrowUpLong, faCloud, faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+import './Skill.css'; // Import the CSS file for additional styles
 
 const Skills = () => {
     const [activeTab, setActiveTab] = useState('skill');
@@ -11,7 +12,7 @@ const Skills = () => {
     };
 
     const experienceItem = [
-        { id: 1, year: 'Aug 2024 - Present', company: 'PT. NOZYRA Global Solusindo', position: 'IT Technical Consultant' },
+        { id: 1, year: 'Aug 2024 - Present', company: 'PT. NOZYRA Global Solusindo', position: 'Software Engineer' },
         { id: 2, year: 'Jul 2023 - Aug 2024', company: 'K-Style Hub .Inc', position: 'Senior Backend Developer' },
         { id: 3, year: 'Apr 2020 - Mei 2023', company: 'PT. NOZYRA Global Solusindo', position: 'Fullstack Developer' },
         { id: 4, year: 'Sep 2019 - Mar 2020', company: 'CV. Webby Digital Mediatama', position: 'Frontend Developer' },
@@ -51,21 +52,21 @@ const Skills = () => {
         { id: 'skill', label: 'Skills' },
         { id: 'experince', label: 'Experience' },
         { id: 'education', label: 'Educations' },
-        { id: 'certifications', label: 'Certfications' }
+        { id: 'certifications', label: 'Certifications' }
     ];
 
     return (
         <section className="bg-white dark:bg-gray-900" id='skills'>
-            <div className="container py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 h-full flex items-center">
+            <div className="container py-28 px-4 mx-auto max-w-screen-xl text-center lg:py-32 h-full flex items-center">
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 w-full">
-                    <div className="p-4 text-left h-full flex flex-col justify-center">
+                    <div className="p-4 text-left h-full flex flex-col justify-start">
                         <div>
                             <h2 className="text-8xl mb-6 pt-8 text-black dark:text-white h2-title">
                                 My Expert areas
                             </h2>
-                            <p className="text-lg text-black dark:text-white mb-8">You can express yourself however you want and whenever you want, for free. You can customize a template or make your own from scratch, with an immersive library at your disposal. You can express yourself however you want and whenever you free.</p>
+                            <p className="text-lg text-black dark:text-white mb-8">As a software engineer, I have the freedom to express myself through code and technology. I can customize solutions or create new ones from scratch, leveraging a vast library of tools and resources at my disposal.</p>
                             <p className="text-lg text-black dark:text-white">
-                                You can customize a template or make your own from scratch, with an immersive library at your disposal.</p>
+                                I specialize in developing robust and scalable software solutions, utilizing the latest technologies and best practices in the industry.</p>
                         </div>
                     </div>
                     <div className='p-4 text-left h-full flex flex-col justify-top'>
@@ -74,7 +75,7 @@ const Skills = () => {
                                 {tabs.map((tab) => (
                                     <li className="me-2" role="presentation" key={tab.id}>
                                         <button
-                                            className={`inline-block px-8 py-4 border-b-2 rounded-t-lg ${activeTab === tab.id
+                                            className={`inline-block px-8 py-4 border-b-2 rounded-t-lg transition-all duration-300 ${activeTab === tab.id
                                                 ? 'focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-1 focus:ring-purple-200 font-medium rounded-lg text-sm px-4 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900'
                                                 : 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
                                                 }`}
@@ -89,7 +90,7 @@ const Skills = () => {
                             </ul>
                         </div>
                         <div>
-                            <div className={`${activeTab === 'skill' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800`}>
+                            <div className={`${activeTab === 'skill' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800 transition-opacity duration-500 ease-in-out`}>
                                 <div className="grid grid-cols-3 gap-6">
                                     {skillItem.map((item) => (
                                         <div key={item.id} className="flex flex-col items-center justify-center p-2">
@@ -101,29 +102,29 @@ const Skills = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className={`${activeTab === 'experince' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800`}>
+                            <div className={`${activeTab === 'experince' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800 transition-opacity duration-500 ease-in-out`}>
                                 <div className="grid grid-cols-2 gap-6">
                                     {experienceItem.map((item) => (
-                                        <div key={item.id} className="flex flex-col items-start justify-center p-2">
-                                            <p>{item.year}</p>
-                                            <p>{item.company}</p>
-                                            <p>{item.position}</p>
+                                        <div key={item.id} className="flex flex-col items-start justify-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                                            <p className="text-lg font-semibold text-black dark:text-white">{item.year}</p>
+                                            <p className="text-md text-gray-700 dark:text-gray-300">{item.company}</p>
+                                            <p className="text-md text-gray-700 dark:text-gray-300">{item.position}</p>
                                         </div>
                                     ))}
                                 </div>
                             </div>
-                            <div className={`${activeTab === 'education' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800`}>
-                                <div className="grid grid-cols-1">
+                            <div className={`${activeTab === 'education' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800 transition-opacity duration-500 ease-in-out`}>
+                                <div className="grid grid-cols-1 gap-6">
                                     {educationItem.map((item) => (
-                                        <div key={item.id} className="flex flex-col items-start justify-center p-2">
-                                            <p>{item.year}</p>
-                                            <p>{item.major} at {item.school}</p>
-                                            <p>{item.degree}</p>
+                                        <div key={item.id} className="flex flex-col items-start justify-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                                            <p className="text-lg font-semibold text-black dark:text-white">{item.year}</p>
+                                            <p className="text-md text-gray-700 dark:text-gray-300">{item.major} at {item.school}</p>
+                                            <p className="text-md text-gray-700 dark:text-gray-300">{item.degree}</p>
                                         </div>
                                     ))}
                                 </div>
                             </div>
-                            <div className={`${activeTab === 'certifications' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800`}>
+                            <div className={`${activeTab === 'certifications' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800 transition-opacity duration-500 ease-in-out`}>
                                 <div className=" grid grid-cols-1">
 
                                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">

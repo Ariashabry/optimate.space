@@ -6,6 +6,11 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 
 const About = () => {
+
+    const downloadHandler = () => {
+        window.open('https://drive.google.com/file/d/1yxraYNDYkbdD6MmzEZj6iDOC_5PWHGES/view?usp=sharing', '_blank');
+    }
+
     return (
         <section className="bg-purple-600 dark:bg-white h-full" id="about">
             <div className="container px-4 mx-auto max-w-screen-xl text-center h-full flex items-center">
@@ -22,10 +27,12 @@ const About = () => {
                             <h2 className="text-8xl mb-6 pt-8 text-black dark:text-white h2-title">
                                 About Me
                             </h2>
-                            <p className="text-2xl text-black dark:text-white">With 10 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.</p>
+                            <p className="text-2xl text-black dark:text-white">
+                                With 6 years of experience as a professional software engineer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.
+                            </p>
                         </div>
                         <div className="mt-20">
-                            <button type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-10 py-5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 ms-4">
+                            <button type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-10 py-5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 ms-4" onClick={downloadHandler}>
                                 <FontAwesomeIcon icon={faFilePdf} className="mr-2 text-xl" /> Download My CV
                             </button>
                         </div>
