@@ -4,7 +4,7 @@ import { faGithub, faInstagram, faLinkedin, faMediumM } from "@fortawesome/free-
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 dark:bg-gray-200" id="contact">
+        <footer className="bg-gray-800 dark:bg-purple-700" id="contact">
             <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
                 <div className="lg:flex lg:items-start lg:gap-8">
                     <div className="text-gray-800 dark:text-gray-200">
@@ -16,7 +16,7 @@ const Footer = () => {
                     <div className="mt-8 grid grid-cols-1 gap-8 lg:mt-0 lg:grid-cols-2 w-full">
                         {/* Left Column */}
                         <div>
-                            <h2 className="text-4xl font-bold text-yellow-500 dark:text-purple-500 mb-4">
+                            <h2 className="text-4xl font-bold text-yellow-500 dark:text-yellow-500 mb-4">
                                 Let's create something amazing!
                             </h2>
                             <p className="text-gray-200 dark:text-gray-800 mb-6">
@@ -26,7 +26,7 @@ const Footer = () => {
                             <div className="my-16">
                                 <p className="text-gray-300 dark:text-gray-700 text-xl mb-2">Email:</p>
                                 <p className="text-white dark:text-gray-900 text-2xl font-semibold">
-                                    aria.shabry[@]gmail[.]com
+                                    aria.shabry@gmail.com
                                 </p>
                             </div>
                         </div>

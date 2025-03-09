@@ -80,9 +80,6 @@ textarea:not([rows]) {
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
 }
 
 .job-title::before {
@@ -98,7 +95,6 @@ textarea:not([rows]) {
 .job-title{
   display: inline-block;
   position: relative;
-  font-size: 32px;
   padding-left: 97px;
 }
 
@@ -117,21 +113,23 @@ textarea:not([rows]) {
   display: inline-block;
   position: relative;
   letter-spacing: -2px;
-	font-size: 56px;
 	font-weight: 700;
   position: relative;
+  font-family: 'Poppins', sans-serif;
 }
 
 .h2-title-norow{
   letter-spacing: -2px;
-	font-size: 56px;
 	font-weight: 700;
   position: relative;
 }
 
 @media (max-width: 1600px) {
   .h2-title{
-    font-size: 45px;
+    font-size: 35px;
+  }
+  .h2-title-norow{
+    font-size: 35px;
   }
   .h2-title::before {
     width: 65px;
@@ -141,6 +139,9 @@ textarea:not([rows]) {
 
 @media (max-width: 1040px) {
   .h2-title{
+    font-size: 35px;
+  }
+  .h2-title-norow{
     font-size: 35px;
   }
   .h2-title::before {
@@ -155,6 +156,18 @@ textarea:not([rows]) {
     width: 50%;
     right: 0px;
     bottom: 0px;
+}
+
+@media (max-width: 767px) {
+  .avatar {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .avatar {
+    display: block;
+  }
 }
 
 .nav_item{
@@ -217,13 +230,11 @@ section#about{
 .year{
   font-family: "Big Shoulders", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
   letter-spacing: -4px;
   font-weight: 800;
   /* font-size: 395px; */
   position: relative;
-  margin-right: -90px;
   /* margin-top: -95px; */
   color: #9333ea;
   line-height: 1;
@@ -234,21 +245,61 @@ section#about{
   margin-top: -75px;
 }
 
-.experience {
-  padding-left: 24px;
-  font-size: 21px;
-  margin-top: 3px;
-  font-weight: 500;
-  display: inline-block;
+@media (max-width: 767px) {
+  .box .year {
+    font-size: 250px;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .box .year {
+    font-size: 300px;
+    margin-top: -60px;
+    margin-right: -90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .box .year {
+    font-size: 420px;
+    margin-top: -75px;
+    margin-right: -90px;
+  }
+}
+
+.experience{
+    font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .experience {
+    font-size: 16px;
+    padding-left: 12px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .experience {
+    font-size: 18px;
+    padding-left: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .experience {
+    font-size: 21px;
+    padding-left: 24px;
+  }
 }
 
 .name_year{
   font-size: 47px;
   left: 0px;
-  bottom: -4.8rem;
   color: #9333ea;
   font-weight: 700;
-  letter-spacing: -4px;
+  letter-spacing: -1px;
   line-height: 1;
   text-transform: uppercase;
   width: 100%;
@@ -265,13 +316,42 @@ section#about{
   height: 120%;
   color: rgba(147, 51, 234, 0.3);
   font-size: 67px;
-  left: 5px;
-  top: -30px;
+  left: 0px;
+  top: -24px;
   letter-spacing: -4px;
   line-height: 1;
   z-index: -1;
 }
 
+@media (max-width: 767px) {
+  .name_year {
+    font-size: 24px;
+    bottom: -4.5rem;
+  }
+  .name_year::before {
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .name_year {
+    font-size: 36px;
+    bottom: -4.8rem;
+  }
+  .name_year::before {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .name_year {
+    font-size: 47px;
+    bottom: -4.8rem;
+  }
+  .name_year::before {
+    font-size: 67px;
+  }
+}
 
 .orido_tm_informations{
 	width: 100%;
@@ -497,6 +577,15 @@ section#about{
 	top: -10px;
 	left: 0px;
 }
+.orido_tm_informations .timelinebox .job span:before{
+	position: absolute;
+	content: "";
+	width: 20px;
+	height: 1px;
+	background-color: var(--main-color);
+	top: -10px;
+	left: 0px;
+}
 .orido_tm_informations .orido_tm_boxed_button a .svg path{
 	fill:#fff;
 }
@@ -597,7 +686,97 @@ swiper-container::part(pagination-bullet-active) {
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
- .avatar img {
+.avatar img {
   max-height: 760px;
   max-width: 700px;
 }
+
+.follow-me{
+  /* border-bottom: 2px solid black !important; */
+  border-width: 0px;
+  ransition: all .5sease;
+}
+
+.follow-me:hover{
+  border-bottom: 2px solid purple !important;
+  ransition: all .5sease;
+}
+
+.skill-item {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Additional styles for a cleaner design and transition effects */
+#skills {
+    transition: all 0.3s ease-in-out;
+}
+
+button[role="tab"] {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button[role="tab"]:hover {
+    background-color: #6b46c1;
+    color: #fff;
+}
+
+button[role="tab"][aria-selected="true"] {
+    background-color: #6b46c1;
+    color: #fff;
+}
+
+button[role="tab"][aria-selected="false"] {
+    background-color: #f7fafc;
+    color: #4a5568;
+}
+
+.tab-content {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.tab-content.active {
+    opacity: 1;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .h2-title {
+    font-size: 24px;
+  }
+  .h2-title::before {
+    width: 45px;
+    bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .h2-title {
+    font-size: 28px;
+  }
+  .h2-title::before {
+    width: 55px;
+    bottom: 12px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .h2-title {
+    font-size: 35px;
+  }
+  .h2-title::before {
+    width: 65px;
+    bottom: 10px;
+  }
+
+}
+

@@ -1,9 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilePdf, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { useRef, useEffect, useState } from 'react';
 import { register } from 'swiper/element/bundle';
 import kstylehub from '../assets/kstylehub.png' 
@@ -11,51 +5,6 @@ import kstylehub from '../assets/kstylehub.png'
 const Portfolio = () => {
     const swiperRef = useRef(null);
     const [activeFilter, setActiveFilter] = useState('all');
-
-    useEffect(() => {
-        // Register Swiper web component
-        register();
-
-        // Swiper parameters
-        const params = {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            pagination: {
-                clickable: true
-            },
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 20
-                },
-                // when window width is >= 640px
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                },
-                // when window width is >= 1024px
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
-                }
-            }
-        };
-
-        // Assign parameters to Swiper element
-        Object.assign(swiperRef.current, params);
-        
-        // Initialize Swiper
-        swiperRef.current.initialize();
-    }, []);
-
-    const handlePrev = () => {
-        swiperRef.current.swiper.slidePrev();
-    };
-
-    const handleNext = () => {
-        swiperRef.current.swiper.slideNext();
-    };
 
     const projectItem = [
         {
@@ -65,7 +14,7 @@ const Portfolio = () => {
             description: 'Modern admission system for Universitas Riau new students.',
             image: 'https://flowbite.com/docs/images/blog/image-1.jpg',
             tags: ['Laravel 11', 'Tailwind', 'MySQL'],
-            link: '#'
+            link: '#portfolio'
         },
         {
             id: 2,
@@ -74,7 +23,7 @@ const Portfolio = () => {
             description: 'Beauty product recommendation service API for Indonesian market.',
             image: 'https://s3.ap-northeast-2.amazonaws.com/hiunnis.com/images/images2/services_01.png',
             tags: ['Golang', 'Flutter', 'MySQL', 'AWS', 'Python'],
-            link: '#'
+            link: '#portfolio'
         },
         {
             id: 3,
@@ -83,7 +32,7 @@ const Portfolio = () => {
             description: 'Business landing page website for K-Style Hub and Unnispick services.',
             image: kstylehub,
             tags: ['React', 'Node.js', 'AWS'],
-            link: '#'
+            link: '#portfolio'
         },
         {
             id: 4,
@@ -92,7 +41,7 @@ const Portfolio = () => {
             description: 'Online assessment platform for post-pandemic academic solutions.',
             image: 'https://ariashabry.github.io/portfolio/assets/img/portfolio/portfolio-2-1.jpg',
             tags: ['Golang', 'ReactJS', 'PostgreSQL', 'Azure'],
-            link: '#'
+            link: '#portfolio'
         },
         {
             id: 5,
@@ -101,13 +50,87 @@ const Portfolio = () => {
             description: 'Corporate website showcasing JNP Group products',
             image: 'https://ariashabry.github.io/portfolio/assets/img/portfolio/portfolio-1.png',
             tags: ['PHP', 'Javascript', 'Bootstrap', 'MySQL'],
-            link: '#'
-        }
+            link: '#portfolio'
+        },
+        {
+            id: 6,
+            name: 'Rancak Pantau Pilkada',
+            category: 'mobile',
+            description: 'Real-time vote counting and monitoring application for regional head elections.',
+            image: 'https://ariashabry.github.io/portfolio/assets/img/portfolio/portfolio-5.png',
+            tags: ['Java', 'PHP', 'Bootstrap', 'MySQL'],
+            link: '#portfolio'
+        },
+        {
+            id: 7,
+            name: 'Truck Record App',
+            category: 'mobile',
+            description: 'Industrial fleet management solution for real-time truck tracking and logistics optimization.',
+            image: 'https://ariashabry.github.io/portfolio/assets/img/portfolio/Thumbnail.png',
+            tags: ['UI/UX', 'Figma'],
+            link: '#portfolio'
+        },
+
     ];
 
     const filteredProjects = activeFilter === 'all' 
         ? projectItem 
         : projectItem.filter(item => item.category === activeFilter);
+
+    useEffect(() => {
+        // Register Swiper web component
+        register();
+
+        // Destroy existing swiper instance if it exists
+        if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.destroy(true, true);
+        }
+
+        // Swiper parameters
+        const params = {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true, // Always enable loop
+            autoplay: {
+                delay: 2000, // 2 seconds delay between slides
+                disableOnInteraction: false, // Continue autoplay after user interaction
+                pauseOnMouseEnter: true // Pause on hover
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                768: {
+                    slidesPerView: filteredProjects.length >= 2 ? 2 : 1,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: filteredProjects.length >= 3 ? 3 : (filteredProjects.length >= 2 ? 2 : 1),
+                    spaceBetween: 20
+                }
+            }
+        };
+
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+            if (swiperRef.current) {
+                // Assign parameters to Swiper element
+                Object.assign(swiperRef.current, params);
+                // Initialize Swiper
+                swiperRef.current.initialize();
+            }
+        }, 0);
+
+    }, [activeFilter, filteredProjects.length]); // Re-run when filter changes
+
+    const handlePrev = () => {
+        swiperRef.current.swiper.slidePrev();
+    };
+
+    const handleNext = () => {
+        swiperRef.current.swiper.slideNext();
+    };
 
     const handleFilterChange = (filter) => {
         setActiveFilter(filter);
@@ -117,7 +140,7 @@ const Portfolio = () => {
     };
 
     return (
-        <section className="bg-yellow-500 dark:bg-white h-full" id="portfolio">
+        <section className="bg-yellow-500 dark:bg-gray-800 h-full" id="portfolio">
             <div className="container py-24 px-4 mx-auto max-w-screen-xl text-center h-full">
                 <div className="p-4 text-left h-full">
                     <div className='mb-8'>
@@ -126,13 +149,13 @@ const Portfolio = () => {
                             recent projects
                         </h2>
                         {/* Add filter buttons */}
-                        <div className="flex gap-4 mt-8 mb-8">
+                        <div className="flex flex-wrap gap-4 mt-8 mb-8 justify-center">
                             <button 
                                 onClick={() => handleFilterChange('all')}
                                 className={`px-4 py-2 rounded-lg transition-all ${
                                     activeFilter === 'all' 
                                     ? 'bg-purple-600 text-white' 
-                                    : 'bg-white text-black hover:bg-purple-100'
+                                    : 'bg-gray-200 text-black hover:bg-purple-100'
                                 }`}
                             >
                                 All Projects
@@ -142,7 +165,7 @@ const Portfolio = () => {
                                 className={`px-4 py-2 rounded-lg transition-all ${
                                     activeFilter === 'web' 
                                     ? 'bg-purple-600 text-white' 
-                                    : 'bg-white text-black hover:bg-purple-100'
+                                    : 'bg-gray-200 text-black hover:bg-purple-100'
                                 }`}
                             >
                                 Web Development
@@ -152,7 +175,7 @@ const Portfolio = () => {
                                 className={`px-4 py-2 rounded-lg transition-all ${
                                     activeFilter === 'mobile' 
                                     ? 'bg-purple-600 text-white' 
-                                    : 'bg-white text-black hover:bg-purple-100'
+                                    : 'bg-gray-200 text-black hover:bg-purple-100'
                                 }`}
                             >
                                 Mobile Development
@@ -160,7 +183,11 @@ const Portfolio = () => {
                         </div>
                     </div>
                     <div className="px-0 mx-0 relative project-slider">
-                        <swiper-container ref={swiperRef} init="false">
+                        <swiper-container 
+                            ref={swiperRef} 
+                            init="false"
+                            className={`${filteredProjects.length === 1 ? 'max-w-[33%] mx-auto' : 'w-full'}`}
+                        >
                             {filteredProjects.map((item) => (
                                 <swiper-slide key={item.id}>
                                     <div className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
@@ -182,31 +209,37 @@ const Portfolio = () => {
                                                     </span>
                                                 ))}
                                             </div>
-                                            <a href={item.link} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                            {/* <a href={item.link} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                 View Project
                                                 <svg className="w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                                 </svg>
-                                            </a>
+                                            </a> */}
                                         </div>
                                     </div>
                                 </swiper-slide>
                             ))}
                         </swiper-container>
-                        <button 
-                            onClick={handlePrev}
-                            className="text-white absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-purple-600 dark:bg-purple-600 p-3 rounded-full shadow-lg hover:scale-110 transition-transform">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-white dark:text-white">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                            </svg>
-                        </button>
-                        <button 
-                            onClick={handleNext}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-purple-600 dark:bg-purple-600 p-3 rounded-full shadow-lg hover:scale-110 transition-transform">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-white dark:text-white">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                        </button>
+                        
+                        {/* Only show navigation buttons if there's more than one project */}
+                        {filteredProjects.length > 1 && (
+                            <div className="flex justify-center mt-4">
+                                <button 
+                                    onClick={handlePrev}
+                                    className="text-white bg-purple-600 dark:bg-purple-600 p-3 rounded-full shadow-lg hover:scale-110 transition-transform mx-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-white dark:text-white">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button 
+                                    onClick={handleNext}
+                                    className="text-white bg-purple-600 dark:bg-purple-600 p-3 rounded-full shadow-lg hover:scale-110 transition-transform mx-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-white dark:text-white">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

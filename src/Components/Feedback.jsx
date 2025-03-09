@@ -75,14 +75,9 @@ const Feedback = () => {
 
     const clients = [
         {
-            name: "Nozyra",
-            logo: "https://www.nozyra.com/wp-content/uploads/2020/08/logo-nozyra-revisi-6-agustus.png",
-            url: "https://www.nozyra.com/"
-        },
-        {
-            name: "Hiunnis",
-            logo: "https://www.hiunnis.com/images/unnis_logo.png",
-            url: "https://www.hiunnis.com/"
+            name: "UNRI",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/2/2c/LOGO-UNRI.png",
+            url: "https://unri.ac.id"
         },
         {
             name: "K-Style Hub",
@@ -90,25 +85,29 @@ const Feedback = () => {
             url: "https://www.k-stylehub.com/default/"
         },
         {
+            name: "Hiunnis",
+            logo: "https://www.hiunnis.com/images/unnis_logo.png",
+            url: "https://www.hiunnis.com/"
+        },
+        {
+            name: "Nozyra",
+            logo: "https://www.nozyra.com/wp-content/uploads/2020/08/logo-nozyra-revisi-6-agustus.png",
+            url: "https://www.nozyra.com/"
+        },
+        {
             name: "Webby Digital",
             logo: "https://pbs.twimg.com/profile_images/440077063974694912/eBwtENeF_400x400.jpeg",
             url: "https://www.webby.digital/home/"
-        },
-        {
-            name: "UNRI",
-            logo: "https://upload.wikimedia.org/wikipedia/commons/2/2c/LOGO-UNRI.png",
-            url: "https://unri.ac.id"
         }
     ];
 
     return (
-        <section className="bg-gray-50 dark:bg-white h-full" id="feedback">
+        <section className="bg-gray-50 dark:bg-gray-700 h-full" id="feedback">
             <div className="container py-24 px-4 mx-auto max-w-screen-xl text-center h-full">
                 <div className="p-4 text-left h-full">
                     <div className='mb-8'>
-                        <h2 className='text-8xl mb-0 text-black dark:text-white h2-title-norow'>Valuable feedback</h2>
-                        <h2 className="text-8xl mb-6 text-black dark:text-white h2-title">
-                            from my clients
+                        <h2 className="text-6xl mb-6 text-black dark:text-white h2-title block">
+                        Valuable feedback <br />from my clients
                         </h2>
                     </div>
                     <div className="relative">
@@ -145,14 +144,16 @@ const Feedback = () => {
                 </div>
             </div>
             <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
-                <h2 className="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl">
-                    Partner & Clients
-                </h2>
+                <div className='mb-8'>
+                    <h2 className="text-6xl mb-6 text-black dark:text-white h2-title">
+                        Partner & clients
+                    </h2>
+                </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
                     {clients.map((client, index) => (
-                        <a 
+                        <a
                             key={index}
-                            href={client.url} 
+                            href={client.url}
                             className="w-full flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
                             target="_blank"
                             rel="noopener noreferrer"

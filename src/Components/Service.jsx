@@ -45,11 +45,11 @@ const Service = () => {
 
 
     return (
-        <section className="bg-gray-100 dark:bg-gray-900" id='skills'>
+        <section className="bg-gray-100 dark:bg-gray-700" id='skills'>
             <div className="container py-24 px-4 mx-auto max-w-screen-xl text-center h-full">
                 <div className="p-4 text-left h-full">
                     <div className='mb-8'>
-                        <h2 className="text-8xl mb-6 pt-8 text-black dark:text-white h2-title">
+                        <h2 className="text-6xl mb-6 pt-8 text-black dark:text-white h2-title">
                             Services I Provide
                         </h2>
                     </div>
@@ -62,15 +62,15 @@ const Service = () => {
                                 className={`flex flex-col p-4 transition-all ease-in duration-500 sm:rounded-lg mb-2 shadow-md ${
                                     hoverService === item.id || (activeService === item.id && hoverService === null)
                                         ? 'bg-purple-500 text-white' 
-                                        : 'text-gray-900 hover:bg-purple-500 hover:text-white'
+                                        : 'text-gray-900 hover:bg-purple-500 hover:text-white dark:text-white'
                                 }`} 
                                 key={item.id} 
                                 onClick={() => handleActiveService(item.id)}
                                 onMouseEnter={() => setHoverService(item.id)}
                                 onMouseLeave={() => setHoverService(null)}
                             >
-                                <dt className="mb-1 text-2xl font-semibold"><span className='me-4'>{item.id}</span>{item.title}</dt>
-                                <dd className="text-lg ms-8">{item.description}</dd>
+                                <dt className="mb-1 text-xl lg:text-2xl font-semibold"><span className='me-3'>{item.id}</span>{item.title}</dt>
+                                <dd className="text-base ms-5 lg:ms-6">{item.description}</dd>
                             </div>))}
                         </dl>
 

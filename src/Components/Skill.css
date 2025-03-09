@@ -36,3 +36,9 @@ button[role="tab"][aria-selected="false"] {
 .tab-content.active {
     opacity: 1;
 }
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

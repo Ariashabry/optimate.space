@@ -57,11 +57,11 @@ const Skills = () => {
 
     return (
         <section className="bg-white dark:bg-gray-900" id='skills'>
-            <div className="container py-28 px-4 mx-auto max-w-screen-xl text-center lg:py-32 h-full flex items-center">
+            <div className="container py-28 mx-auto max-w-screen-xl text-center lg:py-32 h-full flex items-center">
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 w-full">
                     <div className="p-4 text-left h-full flex flex-col justify-start">
                         <div>
-                            <h2 className="text-8xl mb-6 pt-8 text-black dark:text-white h2-title">
+                            <h2 className="text-6xl mb-6 pt-8 text-black dark:text-white h2-title">
                                 My Expert areas
                             </h2>
                             <p className="text-lg text-black dark:text-white mb-8">As a software engineer, I have the freedom to express myself through code and technology. I can customize solutions or create new ones from scratch, leveraging a vast library of tools and resources at my disposal.</p>
@@ -71,13 +71,13 @@ const Skills = () => {
                     </div>
                     <div className='p-4 text-left h-full flex flex-col justify-top'>
                         <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
-                            <ul className="flex flex-wrap -mb-px text-sm font-medium text-center">
+                            <ul className="flex flex-wrap text-sm font-medium text-center mb-2">
                                 {tabs.map((tab) => (
                                     <li className="me-2" role="presentation" key={tab.id}>
                                         <button
-                                            className={`inline-block px-8 py-4 border-b-2 rounded-t-lg transition-all duration-300 ${activeTab === tab.id
-                                                ? 'focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-1 focus:ring-purple-200 font-medium rounded-lg text-sm px-4 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900'
-                                                : 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
+                                            className={`inline-block px-4 py-4 border-b-2 rounded-t-lg transition-all duration-300 ${activeTab === tab.id
+                                                ? 'focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-1 focus:ring-purple-200 font-medium rounded-lg text-sm mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900'
+                                                : 'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
                                                 }`}
                                             onClick={() => handleTabClick(tab.id)}
                                             role="tab"
@@ -103,7 +103,7 @@ const Skills = () => {
                                 </div>
                             </div>
                             <div className={`${activeTab === 'experince' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800 transition-opacity duration-500 ease-in-out`}>
-                                <div className="grid grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                                     {experienceItem.map((item) => (
                                         <div key={item.id} className="flex flex-col items-start justify-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md">
                                             <p className="text-lg font-semibold text-black dark:text-white">{item.year}</p>
@@ -124,17 +124,17 @@ const Skills = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className={`${activeTab === 'certifications' ? 'block' : 'hidden'} p-4 rounded-lg bg-gray-50 dark:bg-gray-800 transition-opacity duration-500 ease-in-out`}>
+                            <div className={`${activeTab === 'certifications' ? 'block' : 'hidden'} rounded-lg bg-gray-50 dark:bg-gray-800 transition-opacity duration-500 ease-in-out`}>
                                 <div className=" grid grid-cols-1">
 
                                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
                                         {certificationItem.map((item) => (
                                             <li class="py-3 sm:py-4" key={item.id}>
                                                 <div class="flex items-center">
-                                                    <div class="flex-1 min-w-0 ms-4">
+                                                    <div class="flex-1 min-w-0">
 
-                                                        {item.link ? <a class="text-sm font-medium text-gray-900 truncate dark:text-white hover:text-purple-700 hover:underline  dark:hover:text-yellow-600" href={item.link} target='_blank'>
-                                                            {item.name.length > 56 ? `${item.name.substring(0, 56)}...` : item.name}
+                                                        {item.link ? <a class="text-sm font-medium text-gray-900 dark:text-white hover:text-purple-700 hover:underline  dark:hover:text-yellow-600" href={item.link} target='_blank'>
+                                                            {item.name.length > 70 ? `${item.name.substring(0, 70)}...` : item.name}
                                                         </a> : <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
                                                             {item.name.length > 56 ? `${item.name.substring(0, 56)}...` : item.name}
                                                         </p>}

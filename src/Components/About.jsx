@@ -12,8 +12,8 @@ const About = () => {
     }
 
     return (
-        <section className="bg-purple-600 dark:bg-white h-full" id="about">
-            <div className="container px-4 mx-auto max-w-screen-xl text-center h-full flex items-center">
+        <section className="bg-purple-600 dark:bg-gray-700 h-full" id="about">
+            <div className="container mx-auto max-w-screen-xl text-center h-full flex items-center">
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 w-full">
                     <div className="flex items-center justify-center left pb-20">
                         <div className="box">
@@ -24,15 +24,15 @@ const About = () => {
                     </div>
                     <div className="p-4 text-left h-full flex flex-col justify-center">
                         <div>
-                            <h2 className="text-8xl mb-6 pt-8 text-black dark:text-white h2-title">
+                            <h2 className="text-6xl mb-6 pt-8 text-black dark:text-yellow-600 h2-title">
                                 About Me
                             </h2>
-                            <p className="text-2xl text-black dark:text-white">
+                            <p className="lg:text-2xl md:text-xl text-lg text-black dark:text-white">
                                 With 6 years of experience as a professional software engineer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.
                             </p>
                         </div>
                         <div className="mt-20">
-                            <button type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-10 py-5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 ms-4" onClick={downloadHandler}>
+                            <button type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-yellow-400 focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-6 py-4 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" onClick={downloadHandler}>
                                 <FontAwesomeIcon icon={faFilePdf} className="mr-2 text-xl" /> Download My CV
                             </button>
                         </div>
