@@ -124,6 +124,32 @@ const Portfolio = () => {
 
     }, [activeFilter, filteredProjects.length]); // Re-run when filter changes
 
+    useEffect(() => {
+        // Add structured data for SEO
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Aria Shabry",
+            "url": "https://ariashabry.github.io/portfolio/",
+            "jobTitle": "Software Engineer",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Your Company Name"
+            },
+            "description": "Full Stack Software Engineer specializing in web and mobile development",
+            "knowsAbout": ["Web Development", "Mobile Development", "React", "Golang", "Laravel", "Flutter"]
+        };
+
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+
+        return () => {
+            document.head.removeChild(script);
+        };
+    }, []);
+
     const handlePrev = () => {
         swiperRef.current.swiper.slidePrev();
     };
