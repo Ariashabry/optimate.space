@@ -8,7 +8,7 @@ import bg_hero from '../assets/bg-hero (1).png';
 
 const Jumbotron = () => {
     return (
-        <section className="bg-white dark:bg-gray-900 mt-28 h-svh" id='home'>
+        <section className="bg-white dark:bg-gray-900 pt-28 h-svh" id='home'>
             <div className="mx-auto max-w-screen-xl text-center h-full flex items-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="p-4 text-left h-full flex flex-col justify-center">
